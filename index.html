@@ -1,0 +1,3170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>project</title>
+    
+</head>
+ 
+ 
+ 
+ <style>
+     
+
+* {
+
+-webkit-box-sizing:border-box;
+-moz-box-sizing:border-box;
+box-sizing: border-box;
+
+}
+
+
+
+:root {
+
+--main-color:#2196f3;
+--main-color-alt:#1787e0;
+--main-transition:0.3s;
+--main-padding-top:100px;
+--main-padding-bottom:100px;
+--section-background:#ececec;
+
+} 
+
+
+a {
+
+text-decoration: none;
+
+}
+
+
+html {
+
+scroll-behavior: smooth;
+
+}
+
+ul {
+     
+list-style:none;
+margin:0px;
+bottom:0px;
+
+}
+
+.container {
+
+padding-left:15px;
+padding-right:15px;
+margin-left:auto;
+margin-right:auto;
+
+}
+
+@media (min-width:768px) {
+
+.container {
+
+width:750px;
+
+}
+
+}
+
+
+@media (min-width:992px) {
+
+    .container {
+    
+    width:970px;
+    
+    }
+    
+    }
+
+    
+@media (min-width:1200px) {
+
+    .container {
+    
+    width:1170px;;
+    
+    }
+    
+    }
+    
+
+    .main-title {
+
+      margin:0px auto 80px;
+      border:2px solid black;
+      padding:10px 20px;
+      font-size: 30px;
+      width:fit-content;
+      position: relative;
+      z-index:1;
+      transition: var(--main-transition);
+
+    }
+
+.main-title::before,
+.main-title::after {
+
+      content: "";
+      width: 12px;
+      height: 12px;
+      background-color:red;
+      position:absolute;
+      border-radius: 50%;
+      top: 50%;
+      transform:translateY(-50%);
+
+}
+
+.main-title::before {
+
+    right: -30px;
+
+}
+
+
+.main-title::after {
+
+left: -30px;
+
+}
+
+
+.main-title:hover {
+
+color: white;
+border: 2px solid white;
+transition-delay:0.5s;
+}
+
+
+.main-title:hover::after  {
+
+        z-index: -1;
+        animation: left-move 1.5s linear forwards;
+
+}
+
+
+.main-title:hover::before {
+
+    z-index: -1;
+    animation: right-move 1.5s linear forwards;
+
+}
+
+
+
+.header  {
+
+background-color: white;
+position: relative;
+-webkit-box-shadow:0 0 10px #ddd;
+-moz-box-shadow:0 0 10px #ddd;
+box-shadow:0 0 10px #ddd
+
+}
+
+
+.header .container {
+
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-wrap: wrap;
+position: relative;
+
+}
+
+.header .logo {
+
+color: var(--main-color);
+font-size: 26px;
+font-weight: bold;
+height: 72px;
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+
+
+
+@media (max-width:767px) {
+
+    .header .logo {
+    
+    width:100%;
+    height: 50px;
+    
+    }
+    
+    }
+
+
+.header .main-nav {
+
+display: flex;
+
+}
+
+.header .main-nav > li:hover .mega-menu {
+
+   opacity: 1;
+   z-index: 100;
+    top: calc(100% + 1px);
+}
+
+@media (max-width:767px) {
+
+    .header .main-nav {
+    
+      margin: auto;
+    
+    }
+    
+    }
+
+
+
+.header .main-nav > li > a {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 72px;
+    position: relative;
+    color: black;
+    padding: 0 3px;
+    transition: var(--main-transition);
+    overflow: hidden;
+
+    }
+
+
+
+    @media (max-width:767px) {
+
+        .header .main-nav > li > a  {
+        
+            padding: 10px;
+            font-size: 14px;
+            height: 40px;
+   
+        }
+        
+        }
+
+
+
+    .header .main-nav > li > a::before {
+
+     content: "";
+     position: absolute;
+     width: 100%;
+     height: 4px;
+     background-color: var(--main-color);
+     top: 0px;
+     left: -140%;
+     transition: var(--main-transition);
+
+    }
+
+
+    .header .main-nav > li > a:hover {
+
+         color: var(--main-color);
+        background-color:#fafafa;
+
+    }
+
+
+    .header .main-nav > li > a:hover::before {
+
+        left: 0;
+
+    }
+
+
+
+    .header .mega-menu {
+        
+     position:absolute;
+     width:100%;
+     left: 0;
+     padding: 30px;
+     background-color:white;
+     border-bottom:3px solid var(--main-color);
+     z-index:-1;
+     opacity: 0;
+    display: flex;
+     gap: 40px;
+     top: calc(100% + 50px);
+     transition:top var(--main-transition), opacity var(--main-transition);
+     
+    }
+
+
+    @media (max-width:767px) {
+
+        .header .mega-menu   {
+        
+             flex-direction: column;
+             padding: 5px;
+             gap: 0;
+    
+        }
+        
+        }
+
+
+
+
+.header .mega-menu .image  img {
+
+  min-width: 100%;
+
+}
+
+
+@media (max-width:991px) {
+
+    .header .mega-menu .image {
+    
+    display: none;
+
+    }
+    
+    }
+
+
+  .header .mega-menu .links {
+
+         min-width: 250px;
+         flex:1;
+  }
+
+
+  .header .mega-menu .links li {
+
+        position: relative;
+    
+  }
+
+
+
+  .header .mega-menu .links li:not(:last-child) {
+
+    border-bottom:1px solid #e9e6e6;
+}
+
+
+.header .mega-menu .links:first-of-type li:last-child {
+
+    border-bottom:1px solid #e9e6e6;
+
+}
+
+
+
+
+  .header .mega-menu .links li::before {
+
+      content:"";
+      position: absolute;
+      left:0;
+      top: 0;
+      width:0px;
+      height: 100%;
+      background-color:#d1c9c9;
+      z-index:-1;
+      transition: var(--main-color);
+  }
+
+
+
+  .header .mega-menu .links li:hover:before {
+
+       width: 100%;
+    
+}
+
+.header .mega-menu .links li a {
+
+  color: var(--main-color);
+  padding: 15px;
+  display: block;
+  font-size: 18px;
+  font-weight:bold;
+
+}
+
+
+
+.landing {
+
+  position:relative;
+
+
+}
+
+
+.landing::before {
+
+     content: "";
+     position:absolute;
+     top:-40px;
+     left:0px;
+     width: 100%;
+     height: 100%;
+     background-color:#ececec;
+     z-index: -1;
+     transform: skewY(-6deg);
+     transform-origin:top left;
+
+}
+
+.landing .container {
+
+     min-height:calc(100vh - 72px);
+    display: flex;
+    align-items: center;
+    padding-bottom:100px;
+    
+}
+
+.landing .text {
+
+flex: 1;
+
+}
+
+
+
+@media (max-width:991px) {
+
+    .landing .text {
+    
+       text-align: center;
+
+    }
+    
+    }
+
+
+
+.landing .text h1 {
+
+font-size: 40px;
+margin:0;
+letter-spacing:1px;
+
+}
+
+
+@media (max-width:767px) {
+
+    .landing .text h1  {
+    
+     font-size: 28px;
+
+    }
+    
+    }
+
+
+.landing .text p {
+
+    font-size: 23px;
+    line-height: 1.7;
+    margin:5px 0 0;
+    color: #666;
+    max-width:500px;
+
+}
+
+
+
+@media (max-width:991px) {
+
+    .landing .text p {
+    
+     margin: 10px auto;
+
+    }
+    
+    }
+
+
+
+    @media (max-width:767px) {
+
+        .landing .text p  {
+        
+         font-size: 18px;
+     
+        }
+        
+        }
+
+.landing .image img {
+
+position: relative;
+width:440px;
+animation:up-and-down 3s linear infinite;
+
+}
+
+
+
+
+@media (max-width:991px) {
+
+    .landing .image {
+    
+    display: none;
+
+    }
+    
+    }
+
+
+.landing .go-down {
+
+      color: var(--main-color);
+      position: absolute;
+      bottom: 30px;
+      left:50%;
+      transform: translateX(-50%);
+      transition:var(--main-transition);
+
+}
+
+.landing .go-down:hover {
+
+    color: var(--main-color-alt);
+
+}
+
+
+@keyframes up-and-down {
+
+0%,100% {
+    top: 0;
+}
+50% {
+    top: -30%;
+    
+}
+
+}
+
+@keyframes right-move {
+
+        50% {
+
+             right:0;
+             width:12px;
+             height:12px;
+
+        }
+
+
+        100% {
+
+             right: 0;
+             border-radius: 0;
+             width:100%;
+             height: 100%;
+
+        }
+
+}
+
+
+
+
+@keyframes left-move  {
+
+    50% {
+
+        left:0;
+         width:12px;
+         height:12px;
+
+    }
+
+    100% {
+
+        left: 0;
+         border-radius: 0;
+         width:100%;
+         height: 100%;
+
+    }
+
+}
+
+
+
+
+.articles {
+
+    padding-top:var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+     position: relative;
+
+}
+
+
+.articles .container {
+
+        display:grid;
+        grid-template-columns: repeat( auto-fill, minmax(250px, 1fr));
+        gap: 40px;
+
+}
+  
+
+.articles .box {
+
+box-shadow: 0 2px 15px rgb( 0 0 0 / 10% );
+transition: transform var(--main-transition), box-shadow var(--main-transition);
+
+}
+
+.articles .box img {
+
+   width: 100%;
+   max-width: 100%;
+
+}
+
+
+.articles .box:hover {
+
+   transform: translateY(-10px);
+   box-shadow: 0 2px 15px rgb( 0 0 0 / 30% );
+
+}
+
+.articles .box .content {
+
+               padding: 20px;
+
+}
+
+
+
+.articles .box .content h3 {
+
+               margin: 0;
+
+}
+
+
+
+
+.articles .box .content p {
+
+margin: 10px 0 0;
+line-height: 1.5;
+color: #777;
+
+}
+
+
+
+.articles .box  .info {
+
+               padding: 20px;
+               border-top: 1px solid #e6e6e7;
+               display: flex;
+               justify-content:space-between;
+               align-items:center;
+
+}
+
+
+.articles .box  .info a {
+
+     color: var(--main-color);
+     font-weight: bold;
+
+}
+
+.gallery {
+        
+    padding-top:var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+     position: relative;
+     background-color:var(--section-background);
+
+}
+
+
+
+.gallery .container {
+
+    
+    display:grid;
+    grid-template-columns: repeat( auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+
+} 
+
+
+
+
+
+.gallery .box {
+
+    padding: 15px;
+    background-color: white;
+    box-shadow: 0px 12px 20px 0px rgb( 0 0 0 / 13% ),  0px 2px 4px 0px rgb( 0 0 0 / 12% )
+} 
+
+
+
+.gallery .box .image {
+ 
+    position: relative;
+    overflow: hidden;
+} 
+
+
+
+.gallery .box .image::before {
+ 
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(255 255 255 / 50%);
+  width: 0px;
+  height: 0px;
+  opacity: 0;
+ z-index:2;
+
+} 
+
+
+
+.gallery .box .image:hover::before {
+
+  animation: flashing 0.7s;
+
+}
+
+
+.gallery .box img {
+
+    max-width: 100%;
+    transition:var(--main-transition);
+} 
+
+
+.gallery .box .image:hover img {
+
+   transform: rotate(5deg) scale(1.1);
+
+}
+
+@keyframes flashing {
+
+    0%, 40% {
+
+    opacity: 4;
+
+    }
+
+    100% {
+
+        width: 200%;
+        height: 200%;
+        
+    }
+}
+ 
+
+.feature  {
+
+    padding-top:var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+     position: relative;
+     background-color:white;
+    
+}
+
+
+.feature .container {
+ 
+    display:grid;
+    grid-template-columns: repeat( auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+
+}
+
+
+
+.feature .box {
+
+text-align: center;
+border: 1px solid #ccc;
+    
+}
+
+.feature .box:hover a {
+
+background-position: left bottom;
+color: white;
+
+}
+
+
+.feature .box .img-holder {
+
+position: relative;
+overflow: hidden;
+    
+}
+
+
+
+.feature .box:hover .img-holder::after {
+
+    border-width: 170px 500px 170px 0px;
+
+    }
+
+
+
+
+.feature .box .img-holder::before {
+
+content: "";
+position: absolute;
+left: 0;
+top:-1px;
+width: 100%;
+height: 100%;
+
+}
+
+
+
+
+.feature .box .img-holder::after {
+
+content: "";
+position: absolute;
+bottom: 0;
+right: 0;
+border-style: solid;
+border-width: 0px 0px 170px 500px;
+border-color: red green blue black;
+border-color: transparent transparent white transparent;
+transition: var(--main-transition);
+}
+
+
+
+
+
+
+.feature .box .img-holder img {
+
+max-width: 100%;
+    
+}
+
+
+
+
+.feature .box h2 {
+
+ position: relative;
+ font-size: 40px;
+ margin: auto;
+ width: fit-content;
+
+}
+
+
+.feature .box h2::after {
+
+content:"";
+position:absolute;
+bottom:-20px;
+left:15px;
+height:5px;
+width: calc(100% - 30px);
+}
+
+
+
+.feature .box p {
+
+line-height: 2;
+font-size: 20px;
+margin: 30px 0;
+padding: 25px;
+color: #777;
+
+}
+
+
+
+
+.feature .box a {
+
+    display:block;
+    border: 3px solid transparent;
+      width:110px;
+    margin:0 auto 30px;
+    font-weight:bold;
+    font-size:22px;
+    padding:10px 30px;
+    border-radius: 6px;
+    transition: var(--main-transition);
+
+}
+
+
+.feature .quality .img-holder::before {
+
+    background-color:rgb( 244 64 54 / 60% );
+ 
+ }
+ 
+ 
+ 
+ .feature .quality h2::after {
+ 
+     background-color:#f44036;
+ 
+ }
+ 
+ 
+ .feature .quality a {
+ 
+     color:#f44036 ;
+     border-color: #f44036;
+     background: linear-gradient(to right, #f44036 50%, white 50%);
+     background-size: 200% 100%;
+     background-position: right bottom;
+ }
+
+
+
+
+ .feature .passion .img-holder::before {
+
+    background-color:rgb( 3 169 244 / 60% );
+ 
+ }
+ 
+ 
+ 
+ .feature .passion h2::after {
+ 
+     background-color:#03a9f4 ;
+ 
+ }
+ 
+ 
+ .feature .passion a {
+ 
+     color:#03a9f4 ;
+     border-color: #03a9f4 ;
+     background: linear-gradient(to right, #03a9f4 50%, white 50%);
+     background-size: 200% 100%;
+     background-position: right bottom;
+ }
+
+
+
+
+
+
+
+
+
+
+
+ .feature .time .img-holder::before {
+
+    background-color:rgb( 0 150 136 / 60% );
+ 
+ }
+ 
+ 
+ 
+ .feature .time h2::after {
+ 
+     background-color:#009688;
+ 
+ }
+ 
+ 
+ .feature .time a {
+ 
+     color:#009688 ;
+     border-color: #009688;
+     background: linear-gradient(to right, #009688 50%, white 50%);
+     background-size: 200% 100%;
+     background-position: right bottom;
+ }
+
+
+
+
+
+
+
+
+
+
+
+ .testimonials {
+        
+    padding-top:var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+     position: relative;
+     background-color:var(--section-background);
+
+
+ }
+
+
+ .testimonials .container {
+  
+    display:grid;
+    grid-template-columns: repeat( auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+
+ }
+ 
+
+
+
+
+ .testimonials .box  {
+
+padding: 20px;
+background-color: white;
+box-shadow: 0 3px 4px rgb( 0 0 0 / 7% );
+border-radius: 6px;
+position: relative;
+    
+} 
+
+ 
+ .testimonials .box img {
+
+  position: absolute;
+  right: -10px;
+  top: -50px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 10px solid var(--section-background);
+}
+
+
+
+.testimonials .box h3 {
+
+margin: 0 0 10px;
+color: var(--main-color)
+    
+}
+
+
+
+
+
+.testimonials .box .title {
+
+  margin-bottom: 10px;
+  display: block;
+
+}
+
+
+.testimonials .box p {
+   
+line-height: 1.5;
+color: #777;
+margin-top: 10px;
+margin-bottom: 0;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.team {
+
+    padding-top:var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+     position: relative;
+ 
+}
+
+
+
+
+.team .container {
+    
+    display:grid;
+    grid-template-columns: repeat( auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+
+
+}
+
+
+.team  .box {
+
+    position: relative;
+
+}
+
+
+
+.team  .box img {
+
+width: calc(100% - 60px);;
+transition: var(--main-transition);
+border-radius: 10px;
+
+
+}
+
+.team .box:hover img {
+
+filter:grayscale(100%);
+
+}
+
+.team  .box::after,
+.team  .box::before {
+
+    content: "";
+    background-color:#f3f3f3;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    border-radius: 10px;
+    transition: var(--main-transition);
+}
+
+.team  .box::before {
+
+    width: calc(100% - 60px);
+    z-index: -2;
+}
+
+
+.team  .box::after {
+
+    z-index: -1;
+    background-color:#e4e4e4;
+    width: 0;
+}
+
+
+.team  .box:hover::after {
+
+    width: calc(100% - 60px);
+
+}
+
+
+.team  .box .info {
+
+     padding-left: 80px;
+}
+
+
+
+
+.team  .box .info h3 {
+
+   margin-bottom: 0;
+   color: var(--main-color);
+   font-size: 22px;
+   transition: var(--main-transition);
+
+}
+
+
+
+
+.team  .box .info p {
+
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.team  .box:hover .info h3 {
+
+    color: #777;
+
+}
+
+
+
+
+.services {
+        
+    padding-top:var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+     position: relative;
+     background-color:var(--section-background);
+
+
+ }
+
+
+ .services .container {
+  
+    display:grid;
+    grid-template-columns: repeat( auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+ 
+ }
+
+
+
+
+ .services .box {
+
+background-color: white;
+box-shadow: 1px 12px 20px 0 rgb( 0 0 0 / 13% ), 0px 2px 4px 0 rgb( 0 0 0 / 12% );
+counter-increment:services;
+transition:var(--main-transition);
+position: relative;
+
+ } 
+
+
+ .services .box::before {
+
+  content: ""; 
+   left: 50%;
+   transform: translateX(-50%);
+   height:3px;
+   top: -3px;
+   background-color: var(--main-color);
+   position: absolute;
+   width: 0;
+    transition:var(--main-transition);
+
+ }
+
+
+ .services .box:hover {
+
+   transform: translateY(-10px);
+
+ }
+
+
+
+ .services .box:hover::after {
+
+ width: 100%;
+    
+ }
+
+
+
+
+ .services .box > img {
+
+     margin: 30px auto 20px;
+     display: block;
+     text-align: center;
+     color: #d5d5d6;
+    
+}
+
+
+
+
+.services .box > h3 {
+
+text-align: center;
+margin: 20px 0 40px;
+font-size: 25px;
+color: var(--main-color);
+
+}
+
+.services .box .info {
+
+padding: 15px;
+position: relative;
+background-color: #f9f9f9;
+text-align: right;
+
+}
+
+
+
+
+
+
+
+
+
+.our-skills {
+
+    padding-top:var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+     position: relative;
+
+}
+
+
+.our-skills .container {
+
+display: flex;
+align-items: center;
+
+}
+
+
+
+
+
+@media (max-width:991px) {
+
+    .our-skills img {
+
+        display: none;
+
+    }
+
+}
+
+
+.our-skills .skills {
+
+flex: 1;
+
+}
+
+.our-skills .skill h3 {
+
+display:flex;
+justify-content: space-between;
+align-items: center;
+
+}
+
+
+.our-skills .skill h3 span {
+
+font-size: 12px;
+border: 1px solid #ccc;
+padding: 3px 5px;
+border-radius: 4px;
+color: var(--main-color);
+
+}
+
+.our-skills .skill .the-progress {
+
+    height: 30px;
+    background-color: #eee;
+    position: relative;
+}
+
+
+
+.our-skills .skill .the-progress span {
+
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      background-color: var(--main-color);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.work-steps  {
+
+    padding-top:var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+     position: relative;
+     background-color: var(--section-background);
+
+}
+
+
+
+
+.work-steps .container {
+
+display:flex;
+align-items:center;
+justify-content:space-between;
+
+}
+
+
+
+.work-steps .image {
+
+max-width:100%;
+margin-right:100px;
+
+}
+
+
+.work-steps .info .box {
+
+
+background-color: #f6f5f5;
+padding: 30px;
+margin-bottom: 20px;
+border-radius: 6px;
+display: flex;
+align-items: center;
+border: 2px solid white;
+position: relative;
+z-index: 1;
+
+
+}
+
+.work-steps .info .box img {
+
+width:64px;
+margin-right:30px;
+
+}
+
+work-steps .info .box h3 {
+
+ margin: 0;
+ font-size: 22px;
+
+}
+
+
+work-steps .info .box p {
+
+color: #777;
+line-height: 1.7;
+margin: 10px 0 0;
+font-size: 18px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.events {
+
+
+    padding-top:var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+     position: relative;
+
+}
+
+
+
+
+
+
+.events .container {
+
+display: flex;
+align-items: center;
+flex-wrap: wrap;
+
+
+}
+
+
+
+
+.events img {
+
+max-width:450px;
+
+}
+
+
+
+.events .info {
+
+flex: 1;
+
+}
+
+
+
+.events .subscribe {
+
+width: 100%;
+margin-top:50px;
+
+}
+
+
+
+
+@media (max-width:991px) {
+
+    .events img  {
+
+        display: none;
+
+    }
+
+}
+
+.events .info .time {
+
+display: flex;
+align-items: center;
+margin: 20PX auto;
+gap: 10PX;
+justify-content: center;
+
+}
+
+.events .info .time .unit span {
+
+    display: block;
+    transition: var(--main-transition);
+
+
+}
+
+
+
+.events .info .time .unit {
+
+   border: 1PX solid #D4D4D4;
+   border-radius: 6PX;
+   text-align: center;
+   width: 75PX;
+   transition: var(--main-transition);
+    
+}
+
+
+
+.events .info .time .unit span:first-child {
+
+font-size: 35PX;
+padding: 15PX;
+color: var(--main-color);
+font-weight: bold;
+
+
+}
+
+
+
+.events .info .time .unit span:last-child {
+
+padding: 8PX 10PX;
+font-size: 13PX;
+border-top:1PX solid  #D4D4D4;
+    
+}
+
+
+.events .info .time .unit:hover span:last-child,
+.events .info .time .unit:hover {
+    border-color: var(--main-color);
+}
+
+.events .subscribe {
+
+width: 100%;
+margin-top: 50PX;
+    
+}
+
+.events .subscribe form {
+
+width: 600PX;
+margin: 20PX auto;
+padding: 30PX 40PX;
+background-color: #f6f5f5;
+border-radius: 50PX;
+display: flex;
+gap: 20PX;
+
+
+}
+
+
+.events .description {
+
+text-align: center;
+line-height: 1.7;
+font-size: 19PX;
+color: #777;
+
+}
+
+
+.events .title {
+
+    text-align: center;
+    margin: 40PX 0 0;
+    font-size: 30PX;
+}
+
+
+
+
+.events .subscribe form input[type="email"] {
+
+    padding: 20PX;
+    border-radius: 50PX;
+    border: none;
+    flex: 1;
+    caret-color: var(--main-color);
+
+}
+
+
+.events .subscribe form input[type="email"]:focus {
+    outline:none;
+}
+
+
+.events .subscribe form input[type="email"]::placeholder {
+
+    transition: opacity var(--main-transition);
+
+}
+
+
+
+
+.events .subscribe form input[type="email"]:focus::placeholder {
+
+  opacity: 0;
+
+}
+
+
+
+
+.events .subscribe form input[type="submit"] {
+    
+border-radius: 50PX;
+border: none;
+background-color: var(--main-color);
+color: white;
+font-weight: bold;
+padding: 20PX;
+cursor: pointer;
+transition: var(--main-transition);
+
+
+}
+
+.events .subscribe form input[type="submit"]:hover {
+
+background-color: #009688;
+
+}
+
+
+
+
+
+@media (max-width:767px) {
+
+    .events .subscribe form  {
+
+     max-width: 300px;
+     padding: 20PX;
+     flex-direction: column;
+     border-radius: 0;
+
+    }
+
+}
+
+
+
+
+
+@media (max-width:767px) {
+
+    
+    .events .subscribe form input[type="submit"] {
+
+     border-radius: 0;
+
+    }
+
+}
+
+
+
+
+
+@media (max-width:767px) {
+
+    
+    .events .subscribe form input[type="email"] {
+
+     border-radius: 0;
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+.pricing {
+
+padding-top:var(--main-padding-top);
+padding-bottom: var(--main-padding-bottom);
+ position: relative;
+ background-color: var(--section-background);
+
+}
+
+
+
+
+.pricing .container {
+    
+    display:grid;
+    grid-template-columns: repeat( auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+ 
+
+}
+
+
+
+
+.pricing .box {
+
+    position: relative;
+    box-shadow: 1px 12px 20px 0 rgb( 0 0 0 / 13% ), 1px 12px 20px 0 rgb( 0 0 0 / 12% );
+    transition: var(--main-transition);
+    background: white;
+    text-align: center;
+    z-index: 1;
+    
+}
+
+
+
+.pricing .box::before,
+.pricing .box::after {
+
+content: "";
+width: 0px;
+height:50%;
+background-color: #f6f6f6;
+z-index: -1;
+position: absolute;
+transition: var(--main-transition);
+
+}
+
+.pricing .box::after {
+
+left: 0;
+top: 0;
+
+}
+
+
+.pricing .box::before {
+
+   bottom: 0;
+   right: 0; 
+
+}
+
+
+
+.pricing .box:hover::before,
+.pricing .box:hover::after {
+
+width: 100%;
+    
+}
+
+
+
+
+
+.pricing .box.popular .label {
+
+    position: absolute;
+    writing-mode: vertical-lr;
+    background-color: var(--main-color);
+    color: white;
+    font-weight: bold;
+    padding: 10px 10px 35px 10px;
+    font-size: 18px;
+    right: 20px;
+    width: 40px;
+    
+    }
+
+
+
+
+    .pricing .box.popular .label::before {
+
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      border: solid;
+      border-color: transparent transparent white;
+      border-width: 20px;
+
+    }
+
+
+    .pricing .box .title {
+
+                font-weight: bold;
+                margin: 30px 0;
+                font-size:25px;
+                letter-spacing: -1;
+    }
+
+
+    .pricing .box img {
+
+       width: 80px;
+       margin-bottom: 40px;
+    }
+
+    .pricing .box .price {
+
+        margin-bottom: 20px;
+    }
+
+
+    .pricing .box .amount {
+
+        display: block;
+        font-size: 60px;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: var(--main-color);
+
+    }
+
+    .pricing .box .time {
+
+         color: #777;
+
+    }
+
+
+    .pricing .box ul {
+
+            text-align: left;
+
+    }
+
+
+
+
+    .pricing .box ul li {
+
+        padding: 20px;
+        border-top: 1px solid #eee;        
+    }
+
+
+
+    .pricing .box ul::before {
+
+        margin-right: 10px;
+        font-weight: 900px;
+
+    }
+
+
+
+    .pricing .box a {
+
+        display:block;
+        width:150px;
+        border: 2px solid var(--main-color);
+        color:var(--main-color);
+        margin: 30px auto 40px;
+        padding: 15px 20px;
+        border-radius: 6px;
+        font-weight:bold;
+        transition: var(--main-transition);
+
+
+    }
+
+
+
+
+
+    .pricing .box a:hover {
+
+        color: var(--main-color-alt);
+        background-color: var(--main-color-alt);
+        color: white;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.discount {
+
+min-height: 100hv;
+display: flex;
+flex-wrap: wrap;
+
+}
+
+  
+.discount .image {
+
+    background-image: url(19780748_173925766480530_4504571595731234791_o.jpg);
+    background-size: cover;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+     animation: change 10s linear infinite;
+
+}
+
+
+@keyframes change {
+
+    0%, 100% {
+
+        background-image: url(19780748_173925766480530_4504571595731234791_o.jpg);
+
+    }
+
+    50% {
+
+        background-image: url(01FWV2K4T0CZ26MQBMVXXMW0CX~2.jpg);
+        
+    }
+}
+
+.discount .form 
+
+
+
+@media (max-width:991px) {
+
+    .discount .image {
+
+        flex-basis:100%;
+
+    }
+
+}
+
+
+
+
+
+@media (max-width:991px) {
+
+    .discount .form {
+
+        flex-basis:100%;
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+.discount .image::before {
+
+content: "";
+position: absolute;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(43, 99, 145, 0.97);
+z-index: -1;
+
+}
+
+.discount .content {
+
+    text-align: center;
+    padding: 0 20px;
+
+}
+
+
+
+
+.discount .content h2 {
+
+    font-size: 40px;
+    letter-spacing:-2px ;
+
+}
+
+
+.discount .content p {
+
+    line-height: 1.6;
+    font-size: 18px;
+    max-width: 500px;
+
+}
+
+
+
+
+.discount .content img {
+
+    width: 50px;
+
+     }
+
+
+
+
+
+     .discount .form {
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+        }
+    
+
+
+        .discount .form .input {
+
+            display:block;
+            width: 100%;
+            margin-top: 25px;
+            padding: 15px;
+            border: none;
+            border-bottom:1px solid #ccc ;
+            background-color: #f9f9f9;
+            caret-color: var(--main-color);
+        }
+    
+
+        .discount .form .textarea.input {
+
+            resize: none;
+            height: 200px;
+
+        }
+
+
+
+        .discount .form [type="submit"] {
+
+          display: block;
+          width: 100%;
+          padding: 15px;
+          background-color: var(--main-color);
+          color: white;
+          font-weight: bold;
+          font-size: 20px;
+          border: none;
+          cursor: pointer;
+          transition: var(--main-transition);
+
+        }
+
+
+
+        .discount .form [type="submit"]:hover {
+
+            background-color: var(--main-color-alt);
+
+        }
+
+
+
+
+
+
+
+
+
+.footer {
+
+     background-color: #191919;
+     padding: 70px 0 0;
+     text-align: center;
+}
+
+
+
+.footer .container  {
+
+    display:grid;
+    grid-template-columns: repeat( auto-fill, minmax(250px, 1fr));
+    gap: 40px;
+    
+}
+
+
+
+.footer .boxx h3 {
+
+    color: white;
+    font-size: 50px;
+    margin: 0 0 20px;
+    
+}
+
+
+.footer .boxx .text {
+
+    line-height: 2;
+    color: #b9b9b9;
+}
+
+
+.footer .boxx .links li {
+
+
+padding:15px 0;
+transition: var(--main-transition);
+color: white;
+
+
+}
+
+.footer .boxx .links li:not(:last-child) {
+
+    border-bottom: 1px solid #444;
+   
+}
+
+
+.footer .boxx .links li:hover {
+
+padding-left: 10px;
+
+
+}
+
+.footer .boxx .links li a {
+
+   color:#8d0f0f;
+
+}
+
+
+.footer .boxx .links li:hover a {
+
+
+    color:white;
+    transition: var(--main-transition);
+     text-align: center;
+
+}
+
+
+
+.footer .boxx .line {
+
+    display: flex;
+    align-items: center;
+    cursor: #b9b9b9;
+    margin-bottom:30px;
+
+}
+
+.footer .boxx .line .info {
+
+line-height: 1.7;
+flex: 1;
+color: white;
+
+}
+
+.footer .boxx .line .info a {
+
+    color: #009688;
+}
+
+.footer .footer-gallery img {
+
+    width: 78px;
+    border: 3px solid white;
+
+}
+
+.footer .copyright {
+
+    padding: 16px;
+    text-align: center;
+    color: white;
+    margin: 50px 0 0 ;
+    border-top: 1px solid #444;
+    margin: 15px 20px;
+}    
+
+
+.spikes {
+
+position: relative;
+
+}
+
+
+
+
+.spikes::after {
+
+content: "";
+position: absolute;
+right: 0;
+width: 100%;
+height: 30px;
+z-index: 1;
+background-image: linear-gradient(135deg, white 25%, transparent 25%), linear-gradient(225deg, white 25% , transparent 25%);
+background-size: 50px 50px;
+}
+
+     
+ </style>
+ 
+   
+<body>
+    
+<div class="header" id="header">
+    <div class="container">
+
+    <a href="#" class="logo">football world</a>
+    
+      <ul class="main-nav">
+     
+        <li><a href="#new news">new news</a></li>
+        <li><a href="#new news">gallery</a></li>
+        <li><a href="#new news">clubs</a></li>
+        <li>
+          <a href="#new news">Other news</a>
+        
+        <div class="mega-menu">
+          <div class="image">
+               <img src="file:///storage/emulated/0/Android/data/com.teejay.trebedit/files/TrebEdit user files/قب/received_193280879476346.jpeg">
+          </div>
+
+          <ul class="links">
+
+              <li>
+                <a href="#">Hunting</a>
+              </li>  
+
+             
+              <li>
+                <a href="#">Hockey</a>
+              </li>
+
+
+
+              <li>
+                <a href="#">Gymnastics</a>
+              </li>
+
+
+
+              <li>
+                <a href="#">Hammer throw</a>
+              </li>
+
+
+              <li>
+                <a href="#">testimonials</a>
+              </li>
+
+             </ul>
+
+
+
+             <ul class="links">
+            
+              <li>
+                <a href="#">Judo</a>
+              </li>  
+
+             
+              <li>
+                <a href="#">Jogging</a>
+              </li>
+
+
+
+              <li>
+                <a href="#">Javelin throw</a>
+              </li>
+
+
+
+              <li>
+                <a href="#">Motor racing</a>
+              </li>
+
+
+              <li>
+                <a href="#">Karate</a>
+              </li>
+            
+             </ul>
+
+
+                     </div>
+                </li>
+           </ul>
+     </div>
+</div>
+
+
+
+
+
+
+
+<div class="landing">
+
+   <div class="container">
+      
+    <div class="text">
+        <h1>world,Here is football news</h1>
+        <p>Welcome, here you will find everything related to European and international football news, and follow the latest news first-hand. We are pleased to visit you</p>
+    </div>
+
+    <div class="image">
+       <img src="file:///storage/emulated/0/Android/data/com.teejay.trebedit/files/TrebEdit user files/قب/received_193280879476346.jpeg">
+    </div>
+
+
+   </div>
+   <a href="#articles" class="go-down"></a>
+   </div>
+
+   </div>
+</div>
+
+
+
+
+<div class="spikes"></div>
+
+
+
+
+<div class="articles" id="articles">
+     <h2 class="main-title">new news</h2>
+
+<di class="container">
+
+
+
+<div class="box">
+  <img src="file:///storage/emulated/0/Android/data/com.teejay.trebedit/files/TrebEdit user files/قب/8233810b94c74458f5d69b68357b9540c29a9329.jpg">
+<div class="content">
+  <h3>Al-Ahly club</h3>
+  <p>The date of the Al-Ahly and Real Madrid match, Cairo time, and the carrier channels in the 2023 Club World Cup The Egyptian club Al-Ahly will face Real Madrid at Moulay Abdullah Stadium in Rabat, Morocco, and the date of the Al-Ahly and Real Madrid match will come at Wednesday, February 8, 2023, at 9 Egyptian time, as well as Sudan and Jordan.</p>
+</div>
+<div class="info">
+  <a href="#">Read More</a>
+</div>
+</div>
+
+
+
+
+
+<div class="box">
+  <img src="file:///storage/emulated/0/Android/data/com.teejay.trebedit/files/TrebEdit user files/قب/048f0ad7b9461e3f30fd2ff6ae31ce0b_500x300.jpg">
+<div class="content">
+  <h3>Paris Saint-Germain</h3>
+  <p>Hi Kora – Paris Saint-Germain coach Christophe Galtier spoke about the position of his Brazilian star Neymar against Marseille in the round of 16 of the French Cup for the current season 2022-2023. Galtier said: “Neymar had a disturbance in the connective muscle, but he recovered and is again Available for tomorrow's game.</p>
+</div>
+<div class="info">
+  <a href="#">Read More</a>
+</div>
+</div>
+
+
+
+<div class="box">
+  <img src="file:///storage/emulated/0/Android/data/com.teejay.trebedit/files/TrebEdit user files/قب/GettyImages-1435646187.jpg">
+<div class="content">
+  <h3>Real Madrid</h3>
+  <p>Modric, who is close to 500 matches with Real Madrid, where he played 463 games in 11 years, and won 21 titles, including 5 Champions League titles, is keen to continue with the royal club</p>
+</div>
+<div class="info">
+  <a href="#">Read More</a>
+</div>
+</div>
+
+
+
+
+
+<div class="box">
+  <img src="file:///storage/emulated/0/Android/data/com.teejay.trebedit/files/TrebEdit user files/قب/large.jpg">
+<div class="content">
+  <h3>liverpool</h3>
+  <p>A global network has highlighted the bad situation that Liverpool is suffering from, in the current season, and it is not limited to bad results and numerous losses in various tournaments, but also to the lack of goals scored by its attackers</p>
+</div>
+<div class="info">
+  <a href="#">Read More</a>
+</div>
+</div>
+
+
+
+
+
+<div class="box">
+  <img src="file:///storage/emulated/0/Android/data/com.teejay.trebedit/files/TrebEdit user files/قب/يث-1.jpg">
+<div class="content">
+  <h3>Barcelona</h3>
+  <p>Sport 360 – FC Barcelona moved to sign the new Luis Suarez, after opening a line of negotiations with Brazilian club Atletico Paranaense, to obtain the signature of Vitor Roque.</p>
+</div>
+<div class="info">
+  <a href="#">Read More</a>
+</div>
+</div>
+
+
+
+
+
+<div class="box">
+  <img src="file:///storage/emulated/0/Android/data/com.teejay.trebedit/files/TrebEdit user files/قب/k/hihi2-2023-02-07_19-15-06_329351.jpeg">
+<div class="content">
+  <h3>chelsea</h3>
+  <p>Martin saidThe center back Badiashel is probably the best player Ive seen among Chelsea's recent signings. He believes in himself and plays with his mind and will be prominent this season.</p>
+</div>
+<div class="info">
+  <a href="#">Read More</a>
+</div>
+</div>
+
+
+
+
+
+<div class="box">
+  <img src="file:///storage/emulated/0/Android/data/com.teejay.trebedit/files/TrebEdit user files/قب/بايرن.jpg">
+<div class="content">
+  <h3>Bayern Munich</h3>
+  <p>Hey Koura – German football legend Lothar Matthaus strongly criticized Bayern Munich captain, legendary goalkeeper Manuel Neuer, in light of his current crisis with Julian Nagelsmann, coach of the Bavarian team.</p>
+</div>
+<div class="info">
+  <a href="#">Read More</a>
+</div>
+</div>
+
+
+
+
+
+<div class="box">
+  <img src="file:///storage/emulated/0/Android/data/com.teejay.trebedit/files/TrebEdit user files/قب/4b9053f1ea8665e8195a8c13a3b54df6.jpg">
+<div class="content">
+  <h3>Manchester City</h3>
+  <p>Manchester City responded, in an official statement, to the accusations made against it by the English Premier League today, Monday, of violating a number of the championship’s regulations and rules since the 2009/2010 season.</p>
+</div>
+<div class="info">
+  <a href="#">Read More</a>
+</div>
+</div>
+
+
+      </div>
+    </div>
+
+
+
+
+    <div class="spikes"></div>
+
+
+
+    <div class="gallery" id="gallery">
+      <h2 class="main-title">gallery</h2>
+       <div class="container">
+
+        
+        <div class="box">
+          <div class="image">
+            <img src="file:///storage/emulated/0/Android/data/com.teejay.trebedit/files/TrebEdit user files/قب/كريستيانو-رونالدو-14.jpg">
+          </div>
+        </div>
+
+
+
+
+        <div class="box">
+          <div class="image">
+            <img src="file:///storage/emulated/0/Android/data/com.teejay.trebedit/files/TrebEdit user files/قب/G6htE.jpg">
+          </div>
+        </div>
+
+
+
+
+
+        <div class="box">
+          <div class="image">
+            <img src="file:///storage/emulated/0/Android/data/com.teejay.trebedit/files/TrebEdit user files/قب/591566-1722913140.jpeg">
+          </div>
+        </div>
+
+
+
+        
+        <div class="box">
+          <div class="image">
+            <img src="file:///storage/emulated/0/Android/data/com.teejay.trebedit/files/TrebEdit user files/قب/524725Image1.jpg">
+          </div>
+        </div>
+
+
+
+
+        
+        <div class="box">
+          <div class="image">
+            <img src="file:///storage/emulated/0/Android/data/com.teejay.trebedit/files/TrebEdit user files/قب/1525709.jpg">
+          </div>
+        </div>
+
+
+
+
+        <div class="box">
+          <div class="image">
+            <img src="file:///storage/emulated/0/Android/data/com.teejay.trebedit/files/TrebEdit user files/قب/wtskora_import_wp-content_uploads_2020_08_Kylian-Mbappé1-1.jpg">
+          </div>
+        </div>
+
+
+       </div>
+       
+
+    </div>
+
+
+
+
+    <div class="spikes"></div>
+
+
+
+<div class="feature" id="feature">
+  <h2 class="main-title">clubs</h2>
+  <div class="container">
+
+  
+
+  <div class="box quality">
+    <div class="img-holder"><img src="file:///storage/emulated/0/Android/data/com.teejay.trebedit/files/TrebEdit user files/قب/thumbs_b_c_dc2d4621a44ddbd2809e80c4c11f0020~2.jpg"></div>
+    <h2>Paris</h2>
+    <p>Paris Saint-Germain Football Club is a French sports club famous for football, which was established on August 12, 1970 AD after the merger of Paris Club, which was established in 1969 AD, and the Saint-Germain Stadium Club, which was founded in 1904 AD. Its headquarters is located in the French city of Paris</p>
+    <a href="">More</a>
+  </div>
+
+
+  <div class="box passion">
+    <div class="img-holder"><img src="file:///storage/emulated/0/Android/data/com.teejay.trebedit/files/TrebEdit user files/قب/1200px-FC_Barcelona_(crest).svg.png"></div>
+    <h2>Barcelonsa</h2>
+    <p>Barcelona Football Club (in Catalan: Futbol Club Barcelona), often known simply as ... Barcelona won the European Champions League at the expense of English club Manchester United,</p>
+    <a href="#">More</a>
+  </div>
+
+
+
+
+
+
+  <div class="box time">
+    <div class="img-holder"><img src="file:///storage/emulated/0/Android/data/com.teejay.trebedit/files/TrebEdit user files/قب/1463px-ريال_مدريد.svg.png"></div>
+    <h2>real madried</h2>
+    <p>Real Madrid is a Spanish professional football team founded in 1902, based in the Spanish capital, Madrid. The team plays in the Spanish League and was chosen as the best football team in the twentieth century</p>
+    <a href="#">More</a>
+  </div>
+
+
+  </div>
+</div>
+
+
+
+<div class="spikes"></div>
+
+
+ <div class="testimonials">
+
+<h2 class="main-title">football stars</h2>
+
+    <div class="container">
+
+      <div class="box">
+        <img src="file:///storage/emulated/0/Android/data/com.teejay.trebedit/files/TrebEdit user files/قب/4494743-32KJ8EA-highres.jpg">
+        <h3>Lionel Andrés Messi</h3>
+        <span class="title">Footballer</span>
+        <p>Lionel Andrés Messi Cuccittini is an Argentine footballer who plays as a striker for Paris Saint-Germain in Ligue 1 and captains the Argentine national team</p>
+      </div>
+
+
+      <div class="box">
+        <img src="file:///storage/emulated/0/Android/data/com.teejay.trebedit/files/TrebEdit user files/قب/226570.jpg">
+        <h3>Karim Hafez Mustafa Benzema</h3>
+        <span class="title">Footballer</span>
+        <p>Karim Hafez Mustafa Benzema is a French footballer who plays in the attacking position with Real Madrid in the Spanish League and the France national team. Benzema is known for his aerial abilities, high work rate, playmaking and good finishing</p>
+      </div>
+
+
+
+
+
+      <div class="box">
+        <img src="file:///storage/emulated/0/Android/data/com.teejay.trebedit/files/TrebEdit user files/قب/524725Image1.jpg">
+        <h3>Luis Alberto Suarez</h3>
+        <span class="title">Footballer</span>
+        <p>Luis Alberto Suarez Diaz is a Uruguayan footballer who plays as a striker for Gremio Porto Alegrenzi and the Uruguay national football team.</p>
+      </div>
+
+
+
+
+
+      <div class="box">
+        <img src="file:///storage/emulated/0/Android/data/com.teejay.trebedit/files/TrebEdit user files/قب/Poznan-Poland-June-8-2018-International-Football-friendly-match-Poland-vs-Chile-22.-On-the-picture-Robert-Lewandowski.jpg">
+        <h3>Lewandowski</h3>
+        <span class="title">Footballer</span>
+        <p>With 74 international goals, Lewandowski is Poland's all-time leading goalscorer. Won the International Federation of Football History and Statistics Best International Scorer Award in 2015 and the International Federation of Football History and Statistics Best Goalscorer Award in 2020</p>
+      </div>
+
+
+
+
+
+      <div class="box">
+        <img src="file:///storage/emulated/0/Android/data/com.teejay.trebedit/files/TrebEdit user files/قب/GER_ONLY_Cristiano_Ronaldo.png">
+        <h3>Cristiano Ronaldo</h3>
+        <span class="title">Footballer</span>
+        <p>Cristiano Ronaldo dos Santos Aveiro, better known as Cristiano Ronaldo. He is a Portuguese footballer who plays as a striker with Al-Nassr in the Saudi Professional League and is the captain of the Portuguese national team</p>
+      </div>
+
+
+
+
+
+
+      <div class="box">
+        <img src="file:///storage/emulated/0/Android/data/com.teejay.trebedit/files/TrebEdit user files/قب/f6b8de0ffad5085174769d3ce7019e88942457e1.jpg">
+        <h3>Arling Braut Haaland</h3>
+        <span class="title">Footballer</span>
+        <p>Arling Braut Haaland is a Norwegian footballer who plays as a forward for English club Manchester City and the Norway national team. An astonishing goalscorer, Haaland is known for his pace, athleticism and power</p>
+      </div>
+
+
+
+
+    </div>
+ </div>
+
+
+
+ <div class="spikes"></div>
+
+
+
+<div class="team" id="team">
+
+  <h2 class="main-title">players</h2>
+
+  <div class="container">
+
+    <div class="box">
+      <img src="file:///storage/emulated/0/Android/data/com.teejay.trebedit/files/TrebEdit user files/قب/f6b8de0ffad5085174769d3ce7019e88942457e1.jpg">
+      <div class="info">
+        <h3>Haaland</h3>
+        <p>Manchester City</p>
+      </div>
+    </div>
+
+
+
+    <div class="box">
+      <img src="file:///storage/emulated/0/Android/data/com.teejay.trebedit/files/TrebEdit user files/قب/GER_ONLY_Cristiano_Ronaldo.png">
+      <div class="info">
+        <h3>Cristiano Ronaldo</h3>
+        <p>real madried</p>
+      </div>
+    </div>
+
+
+
+
+    <div class="box">
+      <img src="file:///storage/emulated/0/Android/data/com.teejay.trebedit/files/TrebEdit user files/قب/Poznan-Poland-June-8-2018-International-Football-friendly-match-Poland-vs-Chile-22.-On-the-picture-Robert-Lewandowski.jpg">
+      <div class="info">
+        <h3>Lewandowski</h3>
+        <p>Bayern Munich</p>
+      </div>
+    </div>
+
+
+
+
+    <div class="box">
+      <img src="file:///storage/emulated/0/Android/data/com.teejay.trebedit/files/TrebEdit user files/قب/524725Image1.jpg">
+      <div class="info">
+        <h3>Luis Alberto Suarez</h3>
+        <p>Barecelona</p>
+      </div>
+    </div>
+
+
+
+
+    <div class="box">
+      <img src="file:///storage/emulated/0/Android/data/com.teejay.trebedit/files/TrebEdit user files/قب/226570.jpg">
+      <div class="info">
+        <h3>Karim Banzema</h3>
+        <p>real madried</p>
+      </div>
+    </div>
+
+
+
+
+
+    <div class="box">
+      <img src="file:///storage/emulated/0/Android/data/com.teejay.trebedit/files/TrebEdit user files/قب/4494743-32KJ8EA-highres.jpg">
+      <div class="info">
+        <h3>lionel messi</h3>
+        <p>pares san german</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+<div class="spikes"></div>
+
+
+
+
+
+<div class="our-skills" id="our-skills">
+  
+  <h2 class="main-title">Favorite club</h2>
+
+
+  <div class="container">
+    
+    <div class="skills">
+
+      <div class="skill">
+        <h3>Barecelona<span>99%</span></h3>
+        <div class="the-progress">
+          <span style="width: 99%;"></span>
+        </div>
+      </div>
+    
+    
+    
+    
+      <div class="skill">
+        <h3>liverPool<span>70%</span></h3>
+        <div class="the-progress">
+          <span style="width: 70%;"></span>
+        </div>
+      </div>
+    
+    
+    
+    
+    
+    
+   
+      <div class="skill">
+        <h3>real madried<span>20%</span></h3>
+        <div class="the-progress">
+          <span style="width:20%;"></span>
+        </div>
+      </div>
+    
+    
+
+
+
+ 
+    
+      <div class="skill">
+        <h3>Al-ahly<span>80%</span></h3>
+        <div class="the-progress">
+          <span style="width: 80%;"></span>
+        </div>
+      </div>
+    
+    
+    
+    
+    
+    
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="spikes"></div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="events" id="events">
+
+  <h2 class="main-title">products
+</h2>
+
+<div class="container">
+  <img src="magnifying-glass-search-icon-flat-260nw-738763579_1.jpg"/>
+
+  <div class="info">
+    <div class="time">
+
+
+      <div class="unit">
+        <span>08</span>
+        <span>Days</span>
+      </div>
+
+      <div class="unit">
+        <span>02</span>
+        <span>month</span>
+      </div>
+
+
+      <div class="unit">
+        <span>09</span>
+        <span>year</span>
+      </div>
+
+
+      <div class="unit">
+        <span>08</span>
+        <span>Days</span>
+      </div>
+
+
+    </div>
+
+    <h2 class="title">Reservation of sports products</h2>
+    <P class="description">For any T-shirt for any sports club, you can put your email and we will contact you.</P>
+    
+
+
+    <div class="subscribe">
+      <form action="">
+        <input type="email" placeholder="enter your email"/>
+        <input type="submit" value="subscribe"/>
+      </form>
+    </div>
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="pricing" id="pricing">
+
+  <h2 class="main-title">T-shirt prices</h2>
+
+  <div class="container">
+
+
+    <div class="box">
+      <div class="title">Barecelona</div>
+      <img src="png-clipart-computer-computer-monitor-output-device-screen-multimedia-imac-21-computer-computer-monitor-accessory (4).jpg"/>
+      <div class="price">
+       <span class="amount">$55</span>
+       <span class="time">per month</span>
+      </div>
+    
+       <ul>
+         
+         <li>10GP HDD SPACE</li>
+         <li>10GP HDD SPACE</li>
+         <li>10GP HDD SPACE</li>
+         <li>10GP HDD SPACE</li>
+   
+       </ul>
+       <a href="#">choose plan</a>
+   
+  </div>
+
+
+
+
+
+
+
+
+  <div class="box popular">
+    <div class="label">mina refat</div>
+    <div class="title">real madried</div>
+    <img src="png-clipart-computer-computer-monitor-output-device-screen-multimedia-imac-21-computer-computer-monitor-accessory (4).jpg"/>
+    <div class="price">
+     <span class="amount">$25</span>
+     <span class="time">per month</span>
+    </div>
+  
+     <ul>
+       
+       <li>10GP HDD SPACE</li>
+       <li>10GP HDD SPACE</li>
+       <li>10GP HDD SPACE</li>
+       <li>10GP HDD SPACE</li>
+ 
+     </ul>
+     <a href="#">choose plan</a>
+ 
+</div>
+3
+
+
+
+
+
+
+
+
+  
+    <div class="box">
+      <div class="title">liverbool</div>
+      <img src="png-clipart-computer-computer-monitor-output-device-screen-multimedia-imac-21-computer-computer-monitor-accessory (4).jpg"/>
+      <div class="price">
+       <span class="amount">$35</span>
+       <span class="time">per month</span>
+      </div>
+    
+       <ul>
+         
+         <li>10GP HDD SPACE</li>
+         <li>10GP HDD SPACE</li>
+         <li>10GP HDD SPACE</li>
+         <li>10GP HDD SPACE</li>
+   
+       </ul>
+       <a href="#">choose plan</a>
+   
+  </div>
+
+
+
+
+
+
+
+
+
+
+<div class="discount" id="discount">
+
+ <div class="image">
+  <div class="content">
+    <h2>we have a discount</h2>
+    <p>To reserve your favorite club's T-shirt, make a reservation to receive the product now</p>
+    <img src="pngtree-arrow-icon-image_1128383.jpg"/>
+  </div>
+ </div>
+
+<div class="form">
+  <div class="content">
+  <h2>we have a discount</h2>
+
+
+
+  <form action="">
+
+    <input class="input" type="text" placeholder="your name" name="name"/>
+    <input class="input" type="email" placeholder="your email" name="email"/>
+    <input class="input" type="text" placeholder="your phone" name="mobile"/>
+    <textarea class="input" placeholder="tell us your needs" name="message"></textarea>
+      <br>
+    <input type="submit" value="send"/>
+
+  </form>
+
+      </div>
+   </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="footer">
+  <div class="container">
+
+    <div class="boxx">
+      <h3>Barecelona</h3>
+      <p class="text">I love FC Barcelona, ​​and it is my favorite club. I love it very much, and I always watch and enjoy what the players offer</p>  
+   
+    </div>
+    <div class="boxx">
+      
+
+      <div class="line">
+        <div class="info">I'm from egypt, sohage,gerga</div>
+      </div>
+
+
+      <div class="line">
+        <div class="info">
+          <a href="+201287679459">+201276794598</a>
+          <br>
+          <a href="+201287679459">+201224754408</a>
+        </div>
+      </div>
+
+
+    </div>
+    <div class="boxx footer-gallery">
+      <img src="png-clipart-computer-computer-monitor-output-device-screen-multimedia-imac-21-computer-computer-monitor-accessory (4).jpg">
+      <img src="png-clipart-computer-computer-monitor-output-device-screen-multimedia-imac-21-computer-computer-monitor-accessory (4).jpg">
+      <img src="png-clipart-computer-computer-monitor-output-device-screen-multimedia-imac-21-computer-computer-monitor-accessory (4).jpg">
+      <img src="png-clipart-computer-computer-monitor-output-device-screen-multimedia-imac-21-computer-computer-monitor-accessory (4).jpg">
+      <img src="png-clipart-computer-computer-monitor-output-device-screen-multimedia-imac-21-computer-computer-monitor-accessory (4).jpg">
+      <img src="png-clipart-computer-computer-monitor-output-device-screen-multimedia-imac-21-computer-computer-monitor-accessory (4).jpg">
+    </div> 
+
+    </div>
+    
+<p class="copyright">mady By &copy; Mina Refat Shenoda  &copy; </p>
+
+</div>
